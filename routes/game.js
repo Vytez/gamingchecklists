@@ -8,6 +8,6 @@ module.exports = router
 
 router.get('/:gameId', async(req, res) =>{
     const { gameId } = req.params
-    const { rows } = await db.query('SELECT * FROM games WHERE gameId = $1', [id])
+    const { rows } = await db.query('SELECT * FROM games WHERE gameId = $1', [gameId])
     res.send(rows[0])
 })
